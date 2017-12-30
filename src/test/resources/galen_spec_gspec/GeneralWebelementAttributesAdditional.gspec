@@ -1,0 +1,64 @@
+#Declare objects/ web-elements with css and xpath locators
+@objects
+  # general objects
+  full_header_box      id      header
+  header_title_box     css     #header > div > h1
+  item1_box            css     #menu > ul > li:nth-child(1)
+  item2_box            css     #menu > ul > li:nth-child(2)
+  item3_box            css     #menu > ul > li:nth-child(3)
+  item4_box            css     #menu > ul > li:nth-child(4)
+  content_box          id      content-box
+  side_panel_text      id      side-panel
+  footer-box           id      footer
+  item4_text           css     #menu > ul > li:nth-child(4) > a
+
+@groups
+  item_group_elements   item1_box, item2_box, item3_box, item4_box
+  
+= Page: Home page =
+  @on desktop_GeneralWebelementAttributesAdditional
+  
+      side_panel_text:
+          height 220px
+          width 300px
+          height > 200px
+          height < 250px
+          width 300px
+          near item1_box 0px bottom 
+          near item1_box 641px right
+          near item1_box 0px bottom, 641px right  
+          near item1_box 0 to 5px bottom 
+          near item1_box 635 to 645px right
+          near item1_box 0 to 5px bottom, 635 to 645px right
+
+      full_header_box:
+          height 100px
+          height 80 to 110px
+          width 1590px
+          width 1580 to 1600px
+          inside screen
+          inside screen 0px top
+          inside screen 0px left
+          inside screen 0px right
+          above item1_box
+          above item1_box 0px
+          above content_box
+          above content_box 50px
+
+      item4_text:
+          text lowercase is "item 4"
+          css font-size is "16px"
+          css font-family contains "Times New Roman"
+          css font-family matches ".*Times New Roman.*"
+
+      &item_group_elements:
+          inside screen
+          below full_header_box
+          
+      item1_box, item2_box, item3_box, item4_box:	  
+          inside screen
+		  below full_header_box
+		  
+		  
+		  
+		  

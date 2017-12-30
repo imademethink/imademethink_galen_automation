@@ -1,0 +1,52 @@
+#Declare objects/ web-elements with css and xpath locators
+@objects
+  # general objects
+  full_header_box      id      header
+  header_title_box     css     #header > div > h1
+  item1_box            css     #menu > ul > li:nth-child(1)
+  item2_box            css     #menu > ul > li:nth-child(2)
+  item3_box            css     #menu > ul > li:nth-child(3)
+  item4_box            css     #menu > ul > li:nth-child(4)
+  content_box          id      content-box
+  side_panel_text      id      side-panel
+  side_panel_fake      id      side-panel-fake
+  footer-box           id      footer
+  item4_text           css     #menu > ul > li:nth-child(4) > a
+
+@groups
+  item_group_elements   item1_box, item2_box, item3_box, item4_box
+
+= Page: Home page  Section 1=
+  @on GalenWebelementPageSection_1
+      side_panel_text:
+          height 220px
+
+= Page: Home page Section 2=
+  @on GalenWebelementPageSection_2
+  
+      @if ${isVisible("item1_box")}
+          content_box:
+            visible
+      @elseif ${isVisible("item2_box")}
+          full_header_box:
+             height 100px
+             width 1590px
+      @else
+          item3_text:
+             text lowercase is "item 3"            
+
+      @if ${isPresent("side_panel_fake")}
+          side_panel_fake:
+            absent
+
+      side_panel_text:
+          visible
+
+      side_panel_fake:
+          absent
+
+= Page: Home page  Section 3=
+  @on GalenWebelementPageSection_3
+      &item_group_elements:
+          visible
+          height 220px

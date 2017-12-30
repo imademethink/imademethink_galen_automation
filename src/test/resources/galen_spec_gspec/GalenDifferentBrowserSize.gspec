@@ -1,0 +1,32 @@
+#Declare objects/ web-elements with css and xpath locators
+@objects
+  # general objects
+  full_header_box      id      header
+  header_title_box     css     #header > div > h1
+  item1_box            css     #menu > ul > li:nth-child(1)
+  item2_box            css     #menu > ul > li:nth-child(2)
+  item3_box            css     #menu > ul > li:nth-child(3)
+  item4_box            css     #menu > ul > li:nth-child(4)
+  content_box          id      content-box
+  side_panel_text      id      side-panel
+  footer-box           id      footer
+
+= Page: Home page =
+  @on GalenDifferentBrowserSize
+  
+      full_header_box:
+          height 100px
+          width 774px
+
+      header_title_box:
+          height 37px
+          width 734px
+
+      item1_box:
+          height 50px
+          width 59px
+
+      content_box:
+          height 220px
+          width 774px
+      

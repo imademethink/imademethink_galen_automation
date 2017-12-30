@@ -1,0 +1,12 @@
+#Declare objects/ web-elements with css and xpath locators
+@objects
+  # general objects
+  image_element   css     img[src='htmlpage.jpg']
+
+= Page: Home page Section 4=
+  @on desktop_galen_image_compare
+
+      image_element:
+          visible
+          image file sample_galen_image_reference.png, error 2
+          image file sample_galen_image_reference.png, filter-a blur 10, filter-b contrast 200, error 2

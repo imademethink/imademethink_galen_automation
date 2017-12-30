@@ -1,0 +1,69 @@
+#Declare objects/ web-elements with css and xpath locators
+@objects
+  # general objects
+  full_header_box      id      header
+  header_title_box     css     #header > div > h1
+  item1_box            css     #menu > ul > li:nth-child(1)
+  item2_box            css     #menu > ul > li:nth-child(2)
+  item3_box            css     #menu > ul > li:nth-child(3)
+  item4_box            css     #menu > ul > li:nth-child(4)
+  content_box          id      content-box
+  side_panel_text      id      side-panel
+  footer-box           id      footer
+
+= Page: Home page =
+  @on desktop_GeneralWebelementAttributes
+      full_header_box:
+          height 100px
+          height 80 to 105px
+          width 1365 to 1375px
+          inside screen
+          inside screen 0px top
+          inside screen 0px left
+          inside screen 0px right
+          above item1_box
+          above item1_box 0px
+          above content_box
+          above content_box 50px
+
+      header_title_box:
+          height 37px
+          height 30 to 40px
+          width 1000px
+          width 990 to 1010px
+          inside screen
+          inside screen 20px top
+          inside screen 15 to 25px top
+          inside screen 185px left
+          inside screen 180 to 185px left
+          inside screen 185px right
+          inside screen 180 to 185px right
+		  inside full_header_box
+		  inside full_header_box 20px top
+		  inside full_header_box 15 to 25px top
+          inside full_header_box 185px left
+          inside full_header_box 180 to 185px left
+          inside full_header_box 185px right
+          inside full_header_box 180 to 185px right
+
+      item1_box:
+          inside screen
+          inside screen 100px top
+          inside screen 185px left
+          inside screen 1124px right
+          near item2_box 4px left
+          
+      item2_box:
+          inside screen
+          inside screen 100px top
+          inside screen 250px left
+          inside screen 1058px right
+
+      content_box:
+          inside screen
+          inside screen 150px top
+          inside screen 185px left
+          inside screen 185px right
+		  below full_header_box
+		  below full_header_box 50px
+		  below full_header_box 45 to 55px
